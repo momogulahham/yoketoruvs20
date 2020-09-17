@@ -120,6 +120,7 @@
             // clearlabel
             // 
             this.clearlabel.AutoSize = true;
+            this.clearlabel.Enabled = false;
             this.clearlabel.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.clearlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.clearlabel.Location = new System.Drawing.Point(269, 9);
