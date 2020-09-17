@@ -25,9 +25,9 @@ namespace yoketoruvs20
         const int ItemIndex = EnemyIndex + EnemyMax;
 
 
-        const string PlayerTest = "(>_<)";
-        const string EnemyTest = "♦";
-        const string ItemTest = "★";
+        const string PlayerText = "(>_<)";
+        const string EnemyText = "♦";
+        const string ItemText = "★";
 
         static Random rand = new Random();
 
@@ -49,6 +49,26 @@ namespace yoketoruvs20
         public よけとる2020()
         {
             InitializeComponent();
+
+            for(int i = 0; i<ChrMax; i++)
+            {
+                chrs[i] = new Label();
+                chrs[i].  AutoSize = true;
+                if (i == PlayerIndex)
+                {
+                    chrs[i].Text = PlayerText;
+                }
+                else if (i < ItemIndex)
+                {
+                    chrs[i].Text = EnemyText;
+                }
+                else
+                {
+                    chrs[i].Text = ItemText;
+                }
+                Controls.Add(chrs[i]);
+            }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -69,6 +89,20 @@ namespace yoketoruvs20
                     nextState = State.Clear;
                 }
             }
+
+            if(currentState == State.Game)
+            {
+                UpdateGame();
+            }
+        }
+
+
+        void UpdateGame()
+        {
+            Point mp = PointToClient(MousePosition);
+
+            //TODO:mpがプレイヤーの中心になるように設定
+
         }
 
         void initProc()
@@ -93,6 +127,12 @@ namespace yoketoruvs20
                     startbutton1.Visible = false;
                     copyrightLabel.Visible = false;
                     hiLabel.Visible = false;
+
+                    for(int i = EnemyIndex; i < ChrMax; i++)
+                    {
+                        chrs[i].Left = rand.Next(ClientSize.Width - chrs[i].Width);
+                        chrs[i].Top = rand.Next(ClientSize.Height - chrs[i].Height);
+                    }
                     break;
 
                 case State.Gameover:
