@@ -39,6 +39,7 @@
             this.clearlabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.titlebutton = new System.Windows.Forms.Button();
+            this.tempLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titlelabel
@@ -46,7 +47,7 @@
             this.titlelabel.AutoSize = true;
             this.titlelabel.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.titlelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.titlelabel.Location = new System.Drawing.Point(197, 9);
+            this.titlelabel.Location = new System.Drawing.Point(197, 7);
             this.titlelabel.Name = "titlelabel";
             this.titlelabel.Size = new System.Drawing.Size(430, 80);
             this.titlelabel.TabIndex = 0;
@@ -58,7 +59,7 @@
             this.startbutton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.startbutton1.Font = new System.Drawing.Font("MS UI Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.startbutton1.ForeColor = System.Drawing.Color.Purple;
-            this.startbutton1.Location = new System.Drawing.Point(294, 247);
+            this.startbutton1.Location = new System.Drawing.Point(287, 283);
             this.startbutton1.Name = "startbutton1";
             this.startbutton1.Size = new System.Drawing.Size(241, 119);
             this.startbutton1.TabIndex = 1;
@@ -80,7 +81,7 @@
             // 
             this.hiLabel.AutoSize = true;
             this.hiLabel.Font = new System.Drawing.Font("MS UI Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.hiLabel.Location = new System.Drawing.Point(276, 30);
+            this.hiLabel.Location = new System.Drawing.Point(276, 94);
             this.hiLabel.Name = "hiLabel";
             this.hiLabel.Size = new System.Drawing.Size(259, 40);
             this.hiLabel.TabIndex = 3;
@@ -111,7 +112,7 @@
             this.gmaeOverlabel.AutoSize = true;
             this.gmaeOverlabel.Font = new System.Drawing.Font("MS UI Gothic", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.gmaeOverlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.gmaeOverlabel.Location = new System.Drawing.Point(239, 20);
+            this.gmaeOverlabel.Location = new System.Drawing.Point(234, 70);
             this.gmaeOverlabel.Name = "gmaeOverlabel";
             this.gmaeOverlabel.Size = new System.Drawing.Size(326, 67);
             this.gmaeOverlabel.TabIndex = 6;
@@ -123,7 +124,7 @@
             this.clearlabel.Enabled = false;
             this.clearlabel.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.clearlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.clearlabel.Location = new System.Drawing.Point(269, 9);
+            this.clearlabel.Location = new System.Drawing.Point(269, 87);
             this.clearlabel.Name = "clearlabel";
             this.clearlabel.Size = new System.Drawing.Size(276, 80);
             this.clearlabel.TabIndex = 7;
@@ -131,23 +132,36 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // titlebutton
             // 
             this.titlebutton.Font = new System.Drawing.Font("MS UI Gothic", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.titlebutton.Location = new System.Drawing.Point(303, 137);
+            this.titlebutton.Location = new System.Drawing.Point(287, 173);
             this.titlebutton.Name = "titlebutton";
             this.titlebutton.Size = new System.Drawing.Size(225, 104);
             this.titlebutton.TabIndex = 9;
             this.titlebutton.Text = "タイトルへ";
             this.titlebutton.UseVisualStyleBackColor = true;
             // 
+            // tempLabel
+            // 
+            this.tempLabel.AutoSize = true;
+            this.tempLabel.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tempLabel.Location = new System.Drawing.Point(80, 154);
+            this.tempLabel.Name = "tempLabel";
+            this.tempLabel.Size = new System.Drawing.Size(47, 33);
+            this.tempLabel.TabIndex = 10;
+            this.tempLabel.Text = "★";
+            this.tempLabel.Visible = false;
+            // 
             // よけとる2020
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tempLabel);
             this.Controls.Add(this.titlebutton);
             this.Controls.Add(this.clearlabel);
             this.Controls.Add(this.gmaeOverlabel);
@@ -177,6 +191,7 @@
         private System.Windows.Forms.Label clearlabel;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button titlebutton;
+        private System.Windows.Forms.Label tempLabel;
     }
 }
 
